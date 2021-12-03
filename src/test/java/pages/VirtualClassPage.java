@@ -2,7 +2,6 @@ package pages;
 
 import base.PageBase;
 import base.TestBase;
-import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 
 public class VirtualClassPage extends TestBase {

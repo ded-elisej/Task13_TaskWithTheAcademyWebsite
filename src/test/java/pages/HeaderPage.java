@@ -1,18 +1,12 @@
 package pages;
 
 import base.TestBase;
-import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import javax.swing.*;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.Wait;
 
 public class HeaderPage extends TestBase {
-    private static By HomeLink = By.cssSelector("[href = 'https://belhard.academy']");
 
     private static By DaytimeCoursesLink = By.cssSelector("[href = 'https://belhard.academy/daycourses']");
     private static By ManagementAndBusinessAnalysisLink = By.cssSelector("[href = 'https://belhard.academy/businessanalysis']");
@@ -42,108 +36,107 @@ public class HeaderPage extends TestBase {
     private static By ContactsLink = By.cssSelector("[href = '/contact']");
     private static By VacanciesLink = By.cssSelector("[href = '/vacancy']");
 
-    public static void goToHomePage(){
-        $(HomeLink).click();
+    WebDriver driver;
+
+
+    public static void goToDaytimeCourses(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(DaytimeCoursesLink)).perform();
     }
 
-    public static void goToDaytimeCourses(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(DaytimeCoursesLink)).perform();
+    public static void goToManagementAndBusinessAnalysis(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(ManagementAndBusinessAnalysisLink)).perform();
     }
 
-    public static void goToManagementAndBusinessAnalysis(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(ManagementAndBusinessAnalysisLink)).perform();
+    public static void goToITBusinessSupport(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(ITBusinessSupportLink)).perform();
     }
 
-    public static void goToITBusinessSupport(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(ITBusinessSupportLink)).perform();
+    public static void goToProgrammingCourses(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(ProgrammingCoursesLink)).perform();
     }
 
-    public static void goToProgrammingCourses(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(ProgrammingCoursesLink)).perform();
+    public static void goToGameDevelopment(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(GameDevelopmentLink)).perform();
     }
 
-    public static void goToGameDevelopment(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(GameDevelopmentLink)).perform();
+    public static void goToMarketingAndSales(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(MarketingAndSalesLink)).perform();
     }
 
-    public static void goToMarketingAndSales(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(MarketingAndSalesLink)).perform();
+    public static void goToInformationSecurityAndAdministration(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(InformationSecurityAndAdministrationLink)).perform();
     }
 
-    public static void goToInformationSecurityAndAdministration(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(InformationSecurityAndAdministrationLink)).perform();
+    public static void goToSoftSkills(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(SoftSkillsLink)).perform();
     }
 
-    public static void goToSoftSkills(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(SoftSkillsLink)).perform();
+    public static void goToIntensiveCourses(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(IntensiveCoursesLink)).perform();
     }
 
-    public static void goToIntensiveCourses(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(IntensiveCoursesLink)).perform();
+    public static void goToOfferForEnterpreneurs(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ItCoursesDropdown)).click(driver.findElement(OfferForEnterpreneursLink)).perform();
     }
 
-    public static void goToOfferForEnterpreneurs(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ItCoursesDropdown)).click($(OfferForEnterpreneursLink)).perform();
-    }
-
-    public static void clickOnlineCoursesLink(){
+    public static void clickOnlineCoursesLink(WebDriver driver){
         System.out.println("clicking online courses link");
-        $(OnlineCoursesLink).click();
+        driver.findElement(OnlineCoursesLink).click();
     }
 
-    public static void clickITCoursesForChildrenLink(){
+    public static void clickITCoursesForChildrenLink(WebDriver driver){
         System.out.println("clicking IT courses for children link");
-        $(ITCoursesForChildrenLink).click();
+        driver.findElement(ITCoursesForChildrenLink).click();
     }
 
-    public static void clickInternshipForAllDirectionsLink(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(InternshipDropdown)).click($(InternshipForAllDirectionsLink)).perform();
+    public static void clickInternshipForAllDirectionsLink(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(InternshipDropdown)).click(driver.findElement(InternshipForAllDirectionsLink)).perform();
     }
 
-    public static void clickBusinessAnalystInternshipLink(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(InternshipDropdown)).click($(BusinessAnalystInternshipLink)).perform();
+    public static void clickBusinessAnalystInternshipLink(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(InternshipDropdown)).click(driver.findElement(BusinessAnalystInternshipLink)).perform();
     }
 
-    public static void clickHRInternshipLink(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(InternshipDropdown)).click($(HRInternshipLink)).perform();
+    public static void clickHRInternshipLink(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(InternshipDropdown)).click(driver.findElement(HRInternshipLink)).perform();
     }
 
-    public static void clickEmploymentLink(){
+    public static void clickEmploymentLink(WebDriver driver){
         System.out.println("clicking employment link");
-        $(EmploymentLink).click();
+        driver.findElement(EmploymentLink).click();
     }
 
-    public static void clickCorporateTrainingLink(){
+    public static void clickCorporateTrainingLink(WebDriver driver){
         System.out.println("clicking corporate training link");
-        $(CorporateTrainingLink).click();
+        driver.findElement(CorporateTrainingLink).click();
     }
 
-    public static void clickEducationForCitizensOfOtherCountriesLink(){
+    public static void clickEducationForCitizensOfOtherCountriesLink(WebDriver driver){
         System.out.println("clicking education for citizens of other countries link");
-        $(EducationForCitizensOfOtherCountriesLink).click();
+        driver.findElement(EducationForCitizensOfOtherCountriesLink).click();
     }
 
-    public static void clickContactsLink(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ContactsDropdown)).click($(ContactsLink)).perform();
+    public static void clickContactsLink(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ContactsDropdown)).click(driver.findElement(ContactsLink)).perform();
     }
 
-    public static void clickVacanciesLink(){
-        Actions actions = new Actions(WebDriverRunner.getWebDriver());
-        actions.moveToElement($(ContactsDropdown)).click($(VacanciesLink)).perform();
+    public static void clickVacanciesLink(WebDriver driver){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(ContactsDropdown)).click(driver.findElement(VacanciesLink)).perform();
     }
 
 
