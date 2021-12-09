@@ -2,6 +2,7 @@ package tests;
 
 import base.TestBase;
 import com.codeborne.selenide.WebDriverRunner;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Selenide.switchTo;
 public class HeaderTest extends TestBase {
 
     @Test
+    @Description("this test compare page title with right title to make sure we're on the right page ")
     public void DaytimeCoursesLinkTest(){
         String initialTab = WebDriverRunner.getWebDriver().getWindowHandle();
         HeaderPage.goToDaytimeCourses();
