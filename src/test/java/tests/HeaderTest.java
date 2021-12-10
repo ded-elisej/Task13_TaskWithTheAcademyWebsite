@@ -2,14 +2,17 @@ package tests;
 
 import base.TestBase;
 import com.codeborne.selenide.WebDriverRunner;
+import com.epam.reportportal.testng.ReportPortalTestNGListener;
 import jdk.jfr.Description;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HeaderPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.switchTo;
 
+@Listeners ({base.ScreenshotListener.class, ReportPortalTestNGListener.class})
 public class HeaderTest extends TestBase {
 
     @Test
